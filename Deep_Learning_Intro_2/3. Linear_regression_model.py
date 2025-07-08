@@ -43,8 +43,10 @@ b = torch.zeros(1, requires_grad=True)
 optimizer = optim.SGD([W, b], lr=0.01)
 epochs = 1000
 for epoch in range(epochs) :
+    # 순전파
     pred = x_train * W + b
     loss = torch.mean((pred - y_train) ** 2)
+    # 역전파
     optimizer.zero_grad() # 기울기가 누적되지 않도록! 꼭!
     loss.backward()
     optimizer.step()
@@ -53,7 +55,7 @@ for epoch in range(epochs) :
         print(f'Epoch [{epoch+1}/{epochs}], W: {W.item():.3f}, b: {b.item():.3f}, Loss: {loss.item():.4f}')
 print()
 
-''' 3. 테스트 '''
+''' 3. 모델 테스트 '''
 test_x = torch.tensor([[10]], dtype=torch.float)
 with torch.no_grad() :
     pred_y = test_x * W + b
