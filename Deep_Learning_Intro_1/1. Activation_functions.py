@@ -8,7 +8,6 @@ sigmoid_torch_result = torch.sigmoid(torch_data)
 print("sigmoid applied tensor:", sigmoid_torch_result)
 print()
 
-
 '''1-2. MAKE LINEAR LAYER AND APPLY SIGMOID ACTIVATION FUNCTION'''
 import torch
 import torch.nn as nn
