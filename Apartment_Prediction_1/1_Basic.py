@@ -6,6 +6,7 @@ pd.set_option('future.no_silent_downcasting', True)
 
 ''''''
 train = pd.read_csv('train.csv')
+print(train['transaction_date'].unique())
 train = train.replace({'transaction_date': '1~10'} , 1)
 train = train.replace({'transaction_date': '11~20'} , 2)
 train = train.replace({'transaction_date': '21~31'} , 3)
@@ -31,7 +32,9 @@ train['dong'] = le_dong.transform(train['dong'])
 le_jibun = LabelEncoder()
 le_jibun = le_jibun.fit(train['jibun'])
 train['jibun'] = le_jibun.transform(train['jibun'])
+''''''
 
+''''''
 train = train.dropna()
 train_x = train.drop(columns=['transaction_id', 'transaction_real_price'])
 train_y = train['transaction_real_price']
@@ -41,6 +44,8 @@ train_y = train['transaction_real_price']
 model = LinearRegression()
 model = model.fit(train_x, train_y)
 ''''''
+
+
 
 ''''''
 test = pd.read_csv('test.csv')
