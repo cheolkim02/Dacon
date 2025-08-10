@@ -128,7 +128,7 @@ test_x['apt'] = le_apt.transform(test_x['apt'])
 ''''''
 
 ''' Make Prediction '''
-prediction = LinearRegression().predict(test_x)
+prediction = reg.predict(test_x)
 ''''''
 
 ''' Submission '''
