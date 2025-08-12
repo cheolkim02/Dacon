@@ -105,6 +105,6 @@ test_x['apt'] = le_apt.transform(test_x['apt'])
 
 ''' 예측 '''
 prediction = reg.predict(test_x)
-submission = pd.read_csv('sample_submission.csv')
+submission = pd.read_csv('submission.csv')
 submission['transaction_real_price'] = prediction
 submission.to_csv('submission.csv', index=False)

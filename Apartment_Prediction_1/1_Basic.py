@@ -40,7 +40,7 @@ train_x = train.drop(columns=['transaction_id', 'transaction_real_price'])
 train_y = train['transaction_real_price']
 ''''''
 
-''''''
+# ''''''
 model = LinearRegression()
 model = model.fit(train_x, train_y)
 ''''''
