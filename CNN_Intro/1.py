@@ -115,3 +115,5 @@ axes[1, 1].set_title("Blues Channel")
 axes[1, 1].axis('off')
 
 plt.show()
+
+
