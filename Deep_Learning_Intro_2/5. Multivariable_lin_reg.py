@@ -69,13 +69,13 @@ with torch.no_grad():
 
 
 ''' 3. 객체로 만들기 '''
-class LinaerRegressionModel(nn.Module) :
+class LinearRegressionModel(nn.Module) :
     def __init__(self):
-        super(LinaerRegressionModel, self).__init__()
+        super(LinearRegressionModel, self).__init__()
         self.linear = nn.Linear(in_features=2, out_features=1)
     def forward(self, x) :
         return self.linear(x)
-model = LinaerRegressionModel()
+model = LinearRegressionModel()
 
 optimizer = optim.SGD(model.parameters(), lr=0.001)
 nb_epochs = 10000
